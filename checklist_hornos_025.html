@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Hornos 025">
+<title>Checklist Hornos — Proyecto 025</title>
+<style>
+  :root {
+    --navy: #221B3D;
+    --green: #2d7a4f;
+    --green-light: #e8f5ee;
+    --red: #c0392b;
+    --red-light: #fdf0ee;
+    --amber: #d97706;
+    --amber-light: #fef3c7;
+    --gray: #6b7280;
+    --gray-light: #f3f4f6;
+    --border: #e5e7eb;
+    --white: #ffffff;
+    --text: #111827;
+    --text-muted: #6b7280;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f0f5; color: var(--text); min-height: 100vh; padding-bottom: 120px; }
+
+  /* HEADER */
+  .top-bar { background: var(--navy); color: white; padding: 14px 16px 10px; position: sticky; top: 0; z-index: 100; }
+  .top-bar h1 { font-size: 17px; font-weight: 600; }
+  .top-bar .sub { font-size: 12px; opacity: 0.7; margin-top: 2px; }
+  .progress-wrap { margin-top: 8px; background: rgba(255,255,255,0.2); border-radius: 4px; height: 5px; }
+  .progress-fill { height: 5px; background: #4ade80; border-radius: 4px; transition: width 0.4s ease; width: 0%; }
+  .progress-label { font-size: 11px; opacity: 0.8; margin-top: 4px; text-align: right; }
+
+  /* META FORM */
+  .meta-card { background: white; margin: 12px; border-radius: var(--radius); padding: 14px; border: 1px solid var(--border); }
+  .meta-card h2 { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+  .field-row.single { grid-template-columns: 1fr; }
+  .field label { font-size: 11px; color: var(--text-muted); display: block; margin-bottom: 4px; font-weight: 500; }
+  .field input, .field select { width: 100%; font-size: 15px; padding: 9px 11px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--gray-light); color: var(--text); -webkit-appearance: none; appearance: none; }
+  .field input:focus, .field select:focus { outline: 2px solid var(--navy); outline-offset: 1px; background: white; }
+
+  /* TABS */
+  .tabs { display: flex; background: white; margin: 0 12px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+  .tab { flex: 1; padding: 11px 6px; font-size: 13px; font-weight: 600; text-align: center; border: none; background: none; color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
+  .tab.active { background: var(--navy); color: white; }
+
+  /* SECTION */
+  .section-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; padding: 14px 16px 6px; }
+
+  /* ITEM CARD */
+  .item-card { background: white; margin: 4px 12px; border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s; }
+  .item-card.status-ok { border-left: 4px solid var(--green); }
+  .item-card.status-nok { border-left: 4px solid var(--red); }
+  .item-card.status-na { border-left: 4px solid var(--gray); }
+
+  .item-top { display: flex; align-items: flex-start; gap: 10px; padding: 12px 12px 8px; }
+  .item-num { font-size: 11px; font-weight: 700; color: var(--text-muted); min-width: 22px; padding-top: 2px; }
+  .item-text { font-size: 14px; line-height: 1.45; flex: 1; }
+  .item-note-badge { background: var(--amber-light); color: var(--amber); font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 20px; white-space: nowrap; }
+
+  .status-row { display: flex; gap: 6px; padding: 0 12px 8px; flex-wrap: wrap; }
+  .sbtn { flex: 1; min-width: 60px; padding: 8px 4px; font-size: 13px; font-weight: 600; border: 1.5px solid var(--border); border-radius: var(--radius-sm); background: var(--gray-light); color: var(--text-muted); cursor: pointer; text-align: center; transition: all 0.15s; -webkit-appearance: none; }
+  .sbtn:active { transform: scale(0.95); }
+  .sbtn.selected-ok { background: var(--green-light); color: var(--green); border-color: var(--green); }
+  .sbtn.selected-nok { background: var(--red-light); color: var(--red); border-color: var(--red); }
+  .sbtn.selected-na { background: var(--gray-light); color: var(--gray); border-color: var(--gray); }
+
+  .note-area { padding: 0 12px 8px; display: none; }
+  .note-area.show { display: block; }
+  .note-area textarea { width: 100%; font-size: 14px; padding: 9px 11px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--gray-light); color: var(--text); resize: none; font-family: inherit; line-height: 1.4; }
+  .note-area textarea:focus { outline: 2px solid var(--navy); background: white; }
+
+  .action-row { display: flex; gap: 6px; padding: 0 12px 10px; }
+  .act-btn { display: flex; align-items: center; gap: 5px; padding: 7px 10px; font-size: 12px; font-weight: 500; border: 1px dashed var(--border); border-radius: var(--radius-sm); background: none; color: var(--text-muted); cursor: pointer; }
+  .act-btn:active { background: var(--gray-light); }
+  .act-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+  .photo-count { font-size: 11px; color: var(--green); font-weight: 600; padding: 0 12px 8px; display: none; }
+
+  /* BOTTOM BAR */
+  .bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid var(--border); padding: 10px 12px; padding-bottom: max(10px, env(safe-area-inset-bottom)); z-index: 100; }
+  .summary-pills { display: flex; gap: 8px; margin-bottom: 10px; justify-content: center; }
+  .pill { font-size: 13px; font-weight: 600; padding: 5px 14px; border-radius: 20px; }
+  .pill-ok { background: var(--green-light); color: var(--green); }
+  .pill-nok { background: var(--red-light); color: var(--red); }
+  .pill-pend { background: var(--amber-light); color: var(--amber); }
+  .action-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .main-btn { padding: 12px; font-size: 14px; font-weight: 600; border: none; border-radius: var(--radius-sm); cursor: pointer; -webkit-appearance: none; }
+  .btn-share { background: var(--navy); color: white; }
+  .btn-notes { background: var(--gray-light); color: var(--text); border: 1px solid var(--border); }
+  .btn-share:active, .btn-notes:active { opacity: 0.8; }
+
+  /* MODAL */
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; display: none; align-items: flex-end; }
+  .modal-overlay.show { display: flex; }
+  .modal { background: white; border-radius: var(--radius) var(--radius) 0 0; width: 100%; padding: 20px 16px; padding-bottom: max(24px, env(safe-area-inset-bottom)); }
+  .modal h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+  .modal pre { font-size: 12px; line-height: 1.6; white-space: pre-wrap; background: var(--gray-light); padding: 12px; border-radius: var(--radius-sm); max-height: 40vh; overflow-y: auto; color: var(--text); font-family: monospace; }
+  .modal-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+  .modal-btn { padding: 13px; font-size: 14px; font-weight: 600; border: none; border-radius: var(--radius-sm); cursor: pointer; -webkit-appearance: none; }
+  .modal-btn-copy { background: var(--navy); color: white; }
+  .modal-btn-close { background: var(--gray-light); color: var(--text); border: 1px solid var(--border); }
+  .modal-btn:active { opacity: 0.8; }
+  .copy-confirm { font-size: 12px; color: var(--green); text-align: center; margin-top: 8px; display: none; font-weight: 600; }
+
+  input[type="file"] { display: none; }
+  .pane { display: none; }
+  .pane.active { display: block; }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <h1>🔥 Revisión Hornos DS / HC</h1>
+  <div class="sub">Proyecto 025 — ICOMX × FORGENT | Hermosillo</div>
+  <div class="progress-wrap"><div class="progress-fill" id="pbar"></div></div>
+  <div class="progress-label" id="plabel">0 de 0 revisados</div>
+</div>
+
+<div class="meta-card">
+  <h2>Datos de la revisión</h2>
+  <div class="field-row">
+    <div class="field">
+      <label>Técnico</label>
+      <input type="text" id="tecnico" placeholder="Nombre completo" autocomplete="name">
+    </div>
+    <div class="field">
+      <label>Fecha</label>
+      <input type="date" id="fecha">
+    </div>
+  </div>
+  <div class="field-row">
+    <div class="field">
+      <label>Folio</label>
+      <input type="text" id="folio" placeholder="REV-DS-01">
+    </div>
+    <div class="field">
+      <label>Horno</label>
+      <select id="horno-meta">
+        <option>Secado</option>
+        <option>Curado</option>
+        <option>Ambos</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab(0)">Secado</button>
+  <button class="tab" onclick="switchTab(1)">Curado</button>
+  <button class="tab" onclick="switchTab(2)">Común</button>
+</div>
+
+<div id="pane-0" class="pane active"></div>
+<div id="pane-1" class="pane"></div>
+<div id="pane-2" class="pane"></div>
+
+<div class="bottom-bar">
+  <div class="summary-pills">
+    <span class="pill pill-ok">✓ OK: <span id="cnt-ok">0</span></span>
+    <span class="pill pill-nok">✗ NOK: <span id="cnt-nok">0</span></span>
+    <span class="pill pill-pend">⏳ Pend: <span id="cnt-pend">0</span></span>
+  </div>
+  <div class="action-btns">
+    <button class="main-btn btn-share" onclick="showModal()">📤 Ver resumen</button>
+    <button class="main-btn btn-notes" onclick="abrirNotas()">📋 Enviar a Notas</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <h3>Resumen de revisión</h3>
+    <pre id="modal-content"></pre>
+    <div class="modal-btns">
+      <button class="modal-btn modal-btn-copy" onclick="copiarResumen()">📋 Copiar</button>
+      <button class="modal-btn modal-btn-close" onclick="closeModal()">Cerrar</button>
+    </div>
+    <div class="copy-confirm" id="copy-confirm">✅ Copiado — pega en WhatsApp o Notas</div>
+  </div>
+</div>
+
+<input type="file" id="cam-input" accept="image/*" capture="environment">
+
+<script>
+const ITEMS = {
+  0: [
+    { sec: 'Estructura y paneles', items: [
+      'Ubicación del horno conforme al plano CAD',
+      'Paquete de esquina inferior 025-G-014 posicionado correctamente',
+      'Distancia mínima 150 mm en esquinas de lana de roca (piso)',
+      'Placa base de ducto de aire caliente instalada (2450×950×100 mm)',
+      'Paneles laterales 3900×950×150 instalados y verticales',
+      'Bridas en L (025-G-018) instaladas en uniones laterales',
+      'Bridas U 150 mm (025-G-015) instaladas',
+      'Ángulos de esquina superior 150 mm (025-G-013) instalados',
+      'Lana de roca superior colocada sobre ángulos superiores',
+      'Fijación con ángulo superior 2 (025-G-017)',
+      'Ángulo interior de horno (025-G-019) instalado',
+      'Alineación y verticalidad de paneles — tolerancia ±2 mm',
+      'Sellado entre paneles — juntas herméticas sin huecos',
+    ]},
+    { sec: 'Sistema de aire caliente y quemador', items: [
+      'Ducto de aire caliente instalado en posición central',
+      'Reductor del ventilador de aislamiento instalado',
+      'Ventilador de aislamiento instalado',
+      'Cámara de combustión instalada',
+      'Tubería de retorno de aire instalada',
+      'Quemador Riello R40 FS20 instalado — etapa única ✓',
+      'Modelo del quemador correcto (NO intercambiar con HC)',
+      'Posición y orientación del quemador conforme a plano',
+    ]},
+    { sec: 'Cortinas de aire', items: [
+      'Cortina de aire interior del cuerpo del horno instalada',
+      'Cortina de aire exterior del cuerpo del horno instalada',
+      'Fijaciones y soportes de cortinas de aire completos',
+    ]},
+  ],
+  1: [
+    { sec: 'Estructura y paneles', items: [
+      'Ubicación del horno conforme al plano CAD',
+      'Paneles instalados con la misma secuencia que el horno DS',
+      'Bridas L, U y ángulos superiores instalados',
+      'Lana de roca superior fijada correctamente',
+      'Alineación y verticalidad de paneles — tolerancia ±2 mm',
+      'Sellado entre paneles — juntas herméticas sin huecos',
+    ]},
+    { sec: 'Sistema de aire caliente y quemador (diferente al DS)', items: [
+      'Ducto de aire caliente instalado (configuración específica HC)',
+      'Cámara de combustión instalada (configuración HC)',
+      'Tubería de retorno de aire instalada (configuración HC)',
+      'Quemador Riello R40 GS20D instalado — dos etapas ✓',
+      'Modelo del quemador correcto (NO intercambiar con DS)',
+      'Orientación del quemador GS20D conforme a plano',
+      'Reductor del ventilador de aislamiento instalado',
+      'Ventilador de aislamiento instalado',
+    ]},
+    { sec: 'Cortinas de aire', items: [
+      'Cortina de aire interior instalada',
+      'Cortina de aire exterior instalada',
+      'Fijaciones y soportes de cortinas de aire completos',
+    ]},
+  ],
+  2: [
+    { sec: 'Conveyor dentro del horno', items: [
+      'Track interior de horno (furnace inner track) instalado',
+      'Track de expansión dentro del horno instalado',
+      'Cadena XT160 instalada dentro del horno',
+      'Juntas internas de track lisas — sin escalones ni deformaciones',
+      'Prueba manual de cadena — sin atascos en todo el recorrido',
+      'Load slides verificados dentro del horno',
+    ]},
+    { sec: 'Integridad estructural general', items: [
+      'Todos los pernos de fijación de paneles apretados',
+      'Sin huecos o filtraciones visibles en paredes y techo',
+      'Puertas / entradas del horno alineadas y selladas',
+      'Soportes de columnas dentro del horno completos',
+      'Deflectores y guías internas sin daño',
+    ]},
+    { sec: 'Identificación y seguridad', items: [
+      'Placa de identificación visible (modelo de quemador correcto)',
+      'Señalización de temperatura máxima en exterior',
+      'Puerta de inspección / acceso de servicio operativa',
+      'Área perimetral limpia y libre de materiales',
+    ]},
+  ],
+};
+
+const states = {};
+const notes = {};
+const photos = {};
+
+function buildAll() {
+  [0,1,2].forEach(pi => {
+    const pane = document.getElementById('pane-' + pi);
+    let html = '';
+    let gIdx = 0;
+    ITEMS[pi].forEach((sec, si) => {
+      html += `<div class="section-label">${sec.sec}</div>`;
+      sec.items.forEach((item, ii) => {
+        const key = `${pi}_${si}_${ii}`;
+        gIdx++;
+        html += `
+        <div class="item-card" id="card-${key}">
+          <div class="item-top">
+            <span class="item-num">${gIdx}</span>
+            <span class="item-text">${item}</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus('${key}','ok',this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus('${key}','nok',this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus('${key}','na',this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-${key}">
+            <textarea rows="2" placeholder="Observación o número de foto..." onchange="notes['${key}']=this.value" oninput="notes['${key}']=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote('${key}')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+              Nota
+            </button>
+            <button class="act-btn" onclick="openCamera('${key}')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              Foto
+            </button>
+          </div>
+          <div class="photo-count" id="photo-count-${key}"></div>
+        </div>`;
+      });
+    });
+    pane.innerHTML = html;
+  });
+}
+
+function setStatus(key, val, btn) {
+  states[key] = val;
+  const card = document.getElementById('card-' + key);
+  card.classList.remove('status-ok','status-nok','status-na');
+  card.classList.add('status-' + val);
+  const row = btn.closest('.status-row');
+  row.querySelectorAll('.sbtn').forEach(b => b.classList.remove('selected-ok','selected-nok','selected-na'));
+  btn.classList.add('selected-' + val);
+  if (val === 'nok') {
+    document.getElementById('note-area-' + key).classList.add('show');
+  }
+  updateProgress();
+}
+
+function toggleNote(key) {
+  document.getElementById('note-area-' + key).classList.toggle('show');
+}
+
+let currentPhotoKey = null;
+function openCamera(key) {
+  currentPhotoKey = key;
+  const inp = document.getElementById('cam-input');
+  inp.value = '';
+  inp.click();
+}
+document.getElementById('cam-input').addEventListener('change', function() {
+  if (!currentPhotoKey || !this.files.length) return;
+  if (!photos[currentPhotoKey]) photos[currentPhotoKey] = 0;
+  photos[currentPhotoKey]++;
+  const el = document.getElementById('photo-count-' + currentPhotoKey);
+  el.style.display = 'block';
+  el.textContent = '📷 ' + photos[currentPhotoKey] + ' foto(s) tomada(s)';
+});
+
+function switchTab(idx) {
+  document.querySelectorAll('.pane').forEach((p, i) => p.classList.toggle('active', i === idx));
+  document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', i === idx));
+}
+
+function updateProgress() {
+  let total = 0, done = 0, ok = 0, nok = 0;
+  [0,1,2].forEach(pi => {
+    ITEMS[pi].forEach((sec, si) => {
+      sec.items.forEach((_, ii) => {
+        total++;
+        const k = `${pi}_${si}_${ii}`;
+        if (states[k]) { done++; if (states[k]==='ok') ok++; if (states[k]==='nok') nok++; }
+      });
+    });
+  });
+  const pct = total ? Math.round(done/total*100) : 0;
+  document.getElementById('pbar').style.width = pct + '%';
+  document.getElementById('plabel').textContent = `${done} de ${total} revisados (${pct}%)`;
+  document.getElementById('cnt-ok').textContent = ok;
+  document.getElementById('cnt-nok').textContent = nok;
+  document.getElementById('cnt-pend').textContent = total - done;
+}
+
+function buildResumen() {
+  const tec = document.getElementById('tecnico').value || '—';
+  const fecha = document.getElementById('fecha').value || '—';
+  const folio = document.getElementById('folio').value || 'SIN FOLIO';
+  const horno = document.getElementById('horno-meta').value;
+  const tabNames = ['HORNO DE SECADO','HORNO DE CURADO','ELEMENTOS COMUNES'];
+  let ok=0, nok=0, pend=0;
+  let lines = [
+    `CHECKLIST REVISIÓN HORNOS`,
+    `Folio: ${folio}`,
+    `Técnico: ${tec}`,
+    `Fecha: ${fecha}`,
+    `Horno: ${horno}`,
+    `Proyecto 025 | ICOMX × FORGENT`,
+    ``,
+  ];
+  [0,1,2].forEach(pi => {
+    lines.push(`━━ ${tabNames[pi]} ━━`);
+    ITEMS[pi].forEach((sec, si) => {
+      lines.push(`\n▸ ${sec.sec}`);
+      sec.items.forEach((item, ii) => {
+        const k = `${pi}_${si}_${ii}`;
+        const st = states[k];
+        let tag = '[ ] PENDIENTE';
+        if (st==='ok') { tag='[✓] OK'; ok++; }
+        else if (st==='nok') { tag='[✗] NOK'; nok++; }
+        else if (st==='na') { tag='[—] N/A'; ok++; }
+        else pend++;
+        const note = notes[k] ? `\n    → ${notes[k]}` : '';
+        const ph = photos[k] ? ` [${photos[k]} foto(s)]` : '';
+        lines.push(`${tag} ${item}${ph}${note}`);
+      });
+    });
+    lines.push('');
+  });
+  lines.push(`RESUMEN: ✓ OK/NA: ${ok} | ✗ NOK: ${nok} | Pendiente: ${pend}`);
+  return lines.join('\n');
+}
+
+function showModal() {
+  document.getElementById('modal-content').textContent = buildResumen();
+  document.getElementById('modal').classList.add('show');
+  document.getElementById('copy-confirm').style.display = 'none';
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('show');
+}
+
+function copiarResumen() {
+  const txt = document.getElementById('modal-content').textContent;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(txt).then(() => {
+      const el = document.getElementById('copy-confirm');
+      el.style.display = 'block';
+      setTimeout(() => el.style.display = 'none', 3000);
+    });
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = txt; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    const el = document.getElementById('copy-confirm');
+    el.style.display = 'block';
+    setTimeout(() => el.style.display = 'none', 3000);
+  }
+}
+
+function abrirNotas() {
+  const txt = buildResumen();
+  const encoded = encodeURIComponent(txt);
+  window.location.href = `notes://x-callback-url/create?title=Checklist%20Hornos%20025&body=${encoded}`;
+  setTimeout(() => {
+    if (confirm('¿No se abrió Notas? ¿Copiar el resumen al portapapeles?')) {
+      copiarResumen();
+    }
+  }, 1200);
+}
+
+// Init
+document.getElementById('fecha').value = new Date().toISOString().split('T')[0];
+buildAll();
+updateProgress();
+</script>
+</body>
+</html>
