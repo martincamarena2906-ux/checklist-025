@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0064)file:///C:/Users/DELL%20I5/Downloads/checklist_hornos_025_1.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -26,9 +26,8 @@
     --radius-sm: 8px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f0f5; color: var(--text); min-height: 100vh; padding-bottom: 120px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f0f0f5; color: var(--text); min-height: 100vh; padding-bottom: 140px; }
 
-  /* HEADER */
   .top-bar { background: var(--navy); color: white; padding: 14px 16px 10px; position: sticky; top: 0; z-index: 100; }
   .top-bar h1 { font-size: 17px; font-weight: 600; }
   .top-bar .sub { font-size: 12px; opacity: 0.7; margin-top: 2px; }
@@ -36,25 +35,19 @@
   .progress-fill { height: 5px; background: #4ade80; border-radius: 4px; transition: width 0.4s ease; width: 0%; }
   .progress-label { font-size: 11px; opacity: 0.8; margin-top: 4px; text-align: right; }
 
-  /* META FORM */
   .meta-card { background: white; margin: 12px; border-radius: var(--radius); padding: 14px; border: 1px solid var(--border); }
   .meta-card h2 { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
   .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
-  .field-row.single { grid-template-columns: 1fr; }
   .field label { font-size: 11px; color: var(--text-muted); display: block; margin-bottom: 4px; font-weight: 500; }
   .field input, .field select { width: 100%; font-size: 15px; padding: 9px 11px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--gray-light); color: var(--text); -webkit-appearance: none; appearance: none; }
-  .field input:focus, .field select:focus { outline: 2px solid var(--navy); outline-offset: 1px; background: white; }
 
-  /* TABS */
   .tabs { display: flex; background: white; margin: 0 12px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
-  .tab { flex: 1; padding: 11px 6px; font-size: 13px; font-weight: 600; text-align: center; border: none; background: none; color: var(--text-muted); cursor: pointer; transition: all 0.15s; }
+  .tab { flex: 1; padding: 11px 6px; font-size: 13px; font-weight: 600; text-align: center; border: none; background: none; color: var(--text-muted); cursor: pointer; }
   .tab.active { background: var(--navy); color: white; }
 
-  /* SECTION */
   .section-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; padding: 14px 16px 6px; }
 
-  /* ITEM CARD */
-  .item-card { background: white; margin: 4px 12px; border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; transition: border-color 0.2s; }
+  .item-card { background: white; margin: 4px 12px; border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; }
   .item-card.status-ok { border-left: 4px solid var(--green); }
   .item-card.status-nok { border-left: 4px solid var(--red); }
   .item-card.status-na { border-left: 4px solid var(--gray); }
@@ -62,10 +55,9 @@
   .item-top { display: flex; align-items: flex-start; gap: 10px; padding: 12px 12px 8px; }
   .item-num { font-size: 11px; font-weight: 700; color: var(--text-muted); min-width: 22px; padding-top: 2px; }
   .item-text { font-size: 14px; line-height: 1.45; flex: 1; }
-  .item-note-badge { background: var(--amber-light); color: var(--amber); font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 20px; white-space: nowrap; }
 
-  .status-row { display: flex; gap: 6px; padding: 0 12px 8px; flex-wrap: wrap; }
-  .sbtn { flex: 1; min-width: 60px; padding: 8px 4px; font-size: 13px; font-weight: 600; border: 1.5px solid var(--border); border-radius: var(--radius-sm); background: var(--gray-light); color: var(--text-muted); cursor: pointer; text-align: center; transition: all 0.15s; -webkit-appearance: none; }
+  .status-row { display: flex; gap: 6px; padding: 0 12px 8px; }
+  .sbtn { flex: 1; padding: 8px 4px; font-size: 13px; font-weight: 600; border: 1.5px solid var(--border); border-radius: var(--radius-sm); background: var(--gray-light); color: var(--text-muted); cursor: pointer; text-align: center; -webkit-appearance: none; }
   .sbtn:active { transform: scale(0.95); }
   .sbtn.selected-ok { background: var(--green-light); color: var(--green); border-color: var(--green); }
   .sbtn.selected-nok { background: var(--red-light); color: var(--red); border-color: var(--red); }
@@ -73,16 +65,12 @@
 
   .note-area { padding: 0 12px 8px; display: none; }
   .note-area.show { display: block; }
-  .note-area textarea { width: 100%; font-size: 14px; padding: 9px 11px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--gray-light); color: var(--text); resize: none; font-family: inherit; line-height: 1.4; }
-  .note-area textarea:focus { outline: 2px solid var(--navy); background: white; }
+  .note-area textarea { width: 100%; font-size: 14px; padding: 9px 11px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--gray-light); color: var(--text); resize: none; font-family: inherit; }
 
   .action-row { display: flex; gap: 6px; padding: 0 12px 10px; }
   .act-btn { display: flex; align-items: center; gap: 5px; padding: 7px 10px; font-size: 12px; font-weight: 500; border: 1px dashed var(--border); border-radius: var(--radius-sm); background: none; color: var(--text-muted); cursor: pointer; }
-  .act-btn:active { background: var(--gray-light); }
-  .act-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
   .photo-count { font-size: 11px; color: var(--green); font-weight: 600; padding: 0 12px 8px; display: none; }
 
-  /* BOTTOM BAR */
   .bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid var(--border); padding: 10px 12px; padding-bottom: max(10px, env(safe-area-inset-bottom)); z-index: 100; }
   .summary-pills { display: flex; gap: 8px; margin-bottom: 10px; justify-content: center; }
   .pill { font-size: 13px; font-weight: 600; padding: 5px 14px; border-radius: 20px; }
@@ -91,26 +79,33 @@
   .pill-pend { background: var(--amber-light); color: var(--amber); }
   .action-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .main-btn { padding: 12px; font-size: 14px; font-weight: 600; border: none; border-radius: var(--radius-sm); cursor: pointer; -webkit-appearance: none; }
-  .btn-share { background: var(--navy); color: white; }
-  .btn-notes { background: var(--gray-light); color: var(--text); border: 1px solid var(--border); }
-  .btn-share:active, .btn-notes:active { opacity: 0.8; }
+  .btn-send { background: var(--navy); color: white; }
+  .btn-preview { background: var(--gray-light); color: var(--text); border: 1px solid var(--border); }
+  .btn-send:active, .btn-preview:active { opacity: 0.8; }
 
   /* MODAL */
   .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; display: none; align-items: flex-end; }
   .modal-overlay.show { display: flex; }
-  .modal { background: white; border-radius: var(--radius) var(--radius) 0 0; width: 100%; padding: 20px 16px; padding-bottom: max(24px, env(safe-area-inset-bottom)); }
-  .modal h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
-  .modal pre { font-size: 12px; line-height: 1.6; white-space: pre-wrap; background: var(--gray-light); padding: 12px; border-radius: var(--radius-sm); max-height: 40vh; overflow-y: auto; color: var(--text); font-family: monospace; }
-  .modal-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
+  .modal { background: white; border-radius: var(--radius) var(--radius) 0 0; width: 100%; padding: 20px 16px; padding-bottom: max(24px, env(safe-area-inset-bottom)); max-height: 80vh; overflow-y: auto; }
+  .modal h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .modal .modal-sub { font-size: 12px; color: var(--text-muted); margin-bottom: 14px; }
+  .modal pre { font-size: 11px; line-height: 1.6; white-space: pre-wrap; background: var(--gray-light); padding: 12px; border-radius: var(--radius-sm); max-height: 30vh; overflow-y: auto; color: var(--text); font-family: monospace; margin-bottom: 14px; }
+  .modal-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .modal-btn { padding: 13px; font-size: 14px; font-weight: 600; border: none; border-radius: var(--radius-sm); cursor: pointer; -webkit-appearance: none; }
-  .modal-btn-copy { background: var(--navy); color: white; }
+  .modal-btn-send { background: var(--navy); color: white; }
   .modal-btn-close { background: var(--gray-light); color: var(--text); border: 1px solid var(--border); }
-  .modal-btn:active { opacity: 0.8; }
-  .copy-confirm { font-size: 12px; color: var(--green); text-align: center; margin-top: 8px; display: none; font-weight: 600; }
 
-  input[type="file"] { display: none; }
+  /* SENDING STATE */
+  .sending-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 300; display: none; align-items: center; justify-content: center; flex-direction: column; gap: 16px; }
+  .sending-overlay.show { display: flex; }
+  .sending-box { background: white; border-radius: var(--radius); padding: 32px 40px; text-align: center; }
+  .sending-box .icon { font-size: 40px; margin-bottom: 12px; }
+  .sending-box p { font-size: 15px; font-weight: 600; color: var(--text); }
+  .sending-box .sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
   .pane { display: none; }
   .pane.active { display: block; }
+  input[type="file"] { display: none; }
 </style>
 </head>
 <body>
@@ -118,8 +113,8 @@
 <div class="top-bar">
   <h1>🔥 Revisión Hornos DS / HC</h1>
   <div class="sub">Proyecto 025 — ICOMX × FORGENT | Hermosillo</div>
-  <div class="progress-wrap"><div class="progress-fill" id="pbar"></div></div>
-  <div class="progress-label" id="plabel">0 de 0 revisados</div>
+  <div class="progress-wrap"><div class="progress-fill" id="pbar" style="width: 0%;"></div></div>
+  <div class="progress-label" id="plabel">0 de 56 revisados (0%)</div>
 </div>
 
 <div class="meta-card">
@@ -156,37 +151,1114 @@
   <button class="tab" onclick="switchTab(2)">Común</button>
 </div>
 
-<div id="pane-0" class="pane active"></div>
-<div id="pane-1" class="pane"></div>
-<div id="pane-2" class="pane"></div>
+<div id="pane-0" class="pane active"><div class="section-label">Estructura y paneles</div>
+        <div class="item-card" id="card-0_0_0">
+          <div class="item-top">
+            <span class="item-num">1</span>
+            <span class="item-text">Ubicación del horno conforme al plano CAD</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_0_0&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_0&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_0&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_0_0">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_0_0&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_0_0&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_0_0&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_0_0"></div>
+        </div>
+        <div class="item-card" id="card-0_0_1">
+          <div class="item-top">
+            <span class="item-num">2</span>
+            <span class="item-text">Paquete de esquina inferior 025-G-014 posicionado correctamente</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_0_1&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_1&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_1&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_0_1">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_0_1&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_0_1&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_0_1&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_0_1"></div>
+        </div>
+        <div class="item-card" id="card-0_0_2">
+          <div class="item-top">
+            <span class="item-num">3</span>
+            <span class="item-text">Distancia mínima 150 mm en esquinas de lana de roca (piso)</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_0_2&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_2&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_2&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_0_2">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_0_2&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_0_2&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_0_2&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_0_2"></div>
+        </div>
+        <div class="item-card" id="card-0_0_3">
+          <div class="item-top">
+            <span class="item-num">4</span>
+            <span class="item-text">Placa base de ducto de aire caliente instalada (2450×950×100 mm)</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_0_3&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_3&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_3&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_0_3">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_0_3&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_0_3&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_0_3&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_0_3"></div>
+        </div>
+        <div class="item-card" id="card-0_0_4">
+          <div class="item-top">
+            <span class="item-num">5</span>
+            <span class="item-text">Paneles laterales 3900×950×150 instalados y verticales</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_0_4&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_4&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_4&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_0_4">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_0_4&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_0_4&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_0_4&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_0_4"></div>
+        </div>
+        <div class="item-card" id="card-0_0_5">
+          <div class="item-top">
+            <span class="item-num">6</span>
+            <span class="item-text">Bridas en L (025-G-018) instaladas en uniones laterales</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_0_5&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_5&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_5&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_0_5">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_0_5&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_0_5&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_0_5&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_0_5"></div>
+        </div>
+        <div class="item-card" id="card-0_0_6">
+          <div class="item-top">
+            <span class="item-num">7</span>
+            <span class="item-text">Bridas U 150 mm (025-G-015) instaladas</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_0_6&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_6&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_6&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_0_6">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_0_6&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_0_6&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_0_6&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_0_6"></div>
+        </div>
+        <div class="item-card" id="card-0_0_7">
+          <div class="item-top">
+            <span class="item-num">8</span>
+            <span class="item-text">Ángulos de esquina superior 150 mm (025-G-013) instalados</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_0_7&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_7&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_7&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_0_7">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_0_7&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_0_7&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_0_7&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_0_7"></div>
+        </div>
+        <div class="item-card" id="card-0_0_8">
+          <div class="item-top">
+            <span class="item-num">9</span>
+            <span class="item-text">Lana de roca superior colocada sobre ángulos superiores</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_0_8&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_8&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_8&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_0_8">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_0_8&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_0_8&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_0_8&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_0_8"></div>
+        </div>
+        <div class="item-card" id="card-0_0_9">
+          <div class="item-top">
+            <span class="item-num">10</span>
+            <span class="item-text">Fijación con ángulo superior 2 (025-G-017)</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_0_9&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_9&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_9&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_0_9">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_0_9&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_0_9&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_0_9&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_0_9"></div>
+        </div>
+        <div class="item-card" id="card-0_0_10">
+          <div class="item-top">
+            <span class="item-num">11</span>
+            <span class="item-text">Ángulo interior de horno (025-G-019) instalado</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_0_10&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_10&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_10&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_0_10">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_0_10&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_0_10&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_0_10&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_0_10"></div>
+        </div>
+        <div class="item-card" id="card-0_0_11">
+          <div class="item-top">
+            <span class="item-num">12</span>
+            <span class="item-text">Alineación y verticalidad de paneles — tolerancia ±2 mm</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_0_11&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_11&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_11&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_0_11">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_0_11&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_0_11&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_0_11&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_0_11"></div>
+        </div>
+        <div class="item-card" id="card-0_0_12">
+          <div class="item-top">
+            <span class="item-num">13</span>
+            <span class="item-text">Sellado entre paneles — juntas herméticas sin huecos</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_0_12&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_12&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_0_12&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_0_12">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_0_12&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_0_12&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_0_12&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_0_12"></div>
+        </div><div class="section-label">Sistema de aire caliente y quemador</div>
+        <div class="item-card" id="card-0_1_0">
+          <div class="item-top">
+            <span class="item-num">14</span>
+            <span class="item-text">Ducto de aire caliente instalado en posición central</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_1_0&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_0&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_0&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_1_0">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_1_0&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_1_0&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_1_0&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_1_0"></div>
+        </div>
+        <div class="item-card" id="card-0_1_1">
+          <div class="item-top">
+            <span class="item-num">15</span>
+            <span class="item-text">Reductor del ventilador de aislamiento instalado</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_1_1&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_1&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_1&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_1_1">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_1_1&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_1_1&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_1_1&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_1_1"></div>
+        </div>
+        <div class="item-card" id="card-0_1_2">
+          <div class="item-top">
+            <span class="item-num">16</span>
+            <span class="item-text">Ventilador de aislamiento instalado</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_1_2&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_2&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_2&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_1_2">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_1_2&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_1_2&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_1_2&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_1_2"></div>
+        </div>
+        <div class="item-card" id="card-0_1_3">
+          <div class="item-top">
+            <span class="item-num">17</span>
+            <span class="item-text">Cámara de combustión instalada</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_1_3&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_3&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_3&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_1_3">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_1_3&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_1_3&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_1_3&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_1_3"></div>
+        </div>
+        <div class="item-card" id="card-0_1_4">
+          <div class="item-top">
+            <span class="item-num">18</span>
+            <span class="item-text">Tubería de retorno de aire instalada</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_1_4&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_4&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_4&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_1_4">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_1_4&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_1_4&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_1_4&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_1_4"></div>
+        </div>
+        <div class="item-card" id="card-0_1_5">
+          <div class="item-top">
+            <span class="item-num">19</span>
+            <span class="item-text">Quemador Riello R40 FS20 instalado — etapa única ✓</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_1_5&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_5&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_5&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_1_5">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_1_5&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_1_5&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_1_5&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_1_5"></div>
+        </div>
+        <div class="item-card" id="card-0_1_6">
+          <div class="item-top">
+            <span class="item-num">20</span>
+            <span class="item-text">Modelo del quemador correcto (NO intercambiar con HC)</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_1_6&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_6&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_6&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_1_6">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_1_6&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_1_6&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_1_6&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_1_6"></div>
+        </div>
+        <div class="item-card" id="card-0_1_7">
+          <div class="item-top">
+            <span class="item-num">21</span>
+            <span class="item-text">Posición y orientación del quemador conforme a plano</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_1_7&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_7&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_1_7&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_1_7">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_1_7&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_1_7&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_1_7&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_1_7"></div>
+        </div><div class="section-label">Cortinas de aire</div>
+        <div class="item-card" id="card-0_2_0">
+          <div class="item-top">
+            <span class="item-num">22</span>
+            <span class="item-text">Cortina de aire interior del cuerpo del horno instalada</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_2_0&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_2_0&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_2_0&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_2_0">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_2_0&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_2_0&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_2_0&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_2_0"></div>
+        </div>
+        <div class="item-card" id="card-0_2_1">
+          <div class="item-top">
+            <span class="item-num">23</span>
+            <span class="item-text">Cortina de aire exterior del cuerpo del horno instalada</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_2_1&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_2_1&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_2_1&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_2_1">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_2_1&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_2_1&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_2_1&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_2_1"></div>
+        </div>
+        <div class="item-card" id="card-0_2_2">
+          <div class="item-top">
+            <span class="item-num">24</span>
+            <span class="item-text">Fijaciones y soportes de cortinas de aire completos</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;0_2_2&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_2_2&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;0_2_2&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-0_2_2">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;0_2_2&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;0_2_2&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;0_2_2&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-0_2_2"></div>
+        </div></div>
+<div id="pane-1" class="pane"><div class="section-label">Estructura y paneles</div>
+        <div class="item-card" id="card-1_0_0">
+          <div class="item-top">
+            <span class="item-num">1</span>
+            <span class="item-text">Ubicación del horno conforme al plano CAD</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_0_0&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_0_0&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_0_0&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_0_0">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_0_0&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_0_0&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_0_0&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_0_0"></div>
+        </div>
+        <div class="item-card" id="card-1_0_1">
+          <div class="item-top">
+            <span class="item-num">2</span>
+            <span class="item-text">Paneles instalados con la misma secuencia que el horno DS</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_0_1&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_0_1&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_0_1&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_0_1">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_0_1&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_0_1&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_0_1&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_0_1"></div>
+        </div>
+        <div class="item-card" id="card-1_0_2">
+          <div class="item-top">
+            <span class="item-num">3</span>
+            <span class="item-text">Bridas L, U y ángulos superiores instalados</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_0_2&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_0_2&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_0_2&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_0_2">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_0_2&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_0_2&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_0_2&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_0_2"></div>
+        </div>
+        <div class="item-card" id="card-1_0_3">
+          <div class="item-top">
+            <span class="item-num">4</span>
+            <span class="item-text">Lana de roca superior fijada correctamente</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_0_3&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_0_3&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_0_3&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_0_3">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_0_3&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_0_3&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_0_3&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_0_3"></div>
+        </div>
+        <div class="item-card" id="card-1_0_4">
+          <div class="item-top">
+            <span class="item-num">5</span>
+            <span class="item-text">Alineación y verticalidad de paneles — tolerancia ±2 mm</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_0_4&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_0_4&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_0_4&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_0_4">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_0_4&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_0_4&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_0_4&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_0_4"></div>
+        </div>
+        <div class="item-card" id="card-1_0_5">
+          <div class="item-top">
+            <span class="item-num">6</span>
+            <span class="item-text">Sellado entre paneles — juntas herméticas sin huecos</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_0_5&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_0_5&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_0_5&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_0_5">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_0_5&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_0_5&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_0_5&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_0_5"></div>
+        </div><div class="section-label">Sistema de aire caliente y quemador (diferente al DS)</div>
+        <div class="item-card" id="card-1_1_0">
+          <div class="item-top">
+            <span class="item-num">7</span>
+            <span class="item-text">Ducto de aire caliente instalado (configuración específica HC)</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_1_0&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_0&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_0&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_1_0">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_1_0&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_1_0&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_1_0&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_1_0"></div>
+        </div>
+        <div class="item-card" id="card-1_1_1">
+          <div class="item-top">
+            <span class="item-num">8</span>
+            <span class="item-text">Cámara de combustión instalada (configuración HC)</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_1_1&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_1&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_1&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_1_1">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_1_1&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_1_1&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_1_1&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_1_1"></div>
+        </div>
+        <div class="item-card" id="card-1_1_2">
+          <div class="item-top">
+            <span class="item-num">9</span>
+            <span class="item-text">Tubería de retorno de aire instalada (configuración HC)</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_1_2&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_2&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_2&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_1_2">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_1_2&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_1_2&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_1_2&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_1_2"></div>
+        </div>
+        <div class="item-card" id="card-1_1_3">
+          <div class="item-top">
+            <span class="item-num">10</span>
+            <span class="item-text">Quemador Riello R40 GS20D instalado — dos etapas ✓</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_1_3&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_3&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_3&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_1_3">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_1_3&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_1_3&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_1_3&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_1_3"></div>
+        </div>
+        <div class="item-card" id="card-1_1_4">
+          <div class="item-top">
+            <span class="item-num">11</span>
+            <span class="item-text">Modelo del quemador correcto (NO intercambiar con DS)</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_1_4&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_4&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_4&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_1_4">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_1_4&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_1_4&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_1_4&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_1_4"></div>
+        </div>
+        <div class="item-card" id="card-1_1_5">
+          <div class="item-top">
+            <span class="item-num">12</span>
+            <span class="item-text">Orientación del quemador GS20D conforme a plano</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_1_5&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_5&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_5&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_1_5">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_1_5&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_1_5&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_1_5&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_1_5"></div>
+        </div>
+        <div class="item-card" id="card-1_1_6">
+          <div class="item-top">
+            <span class="item-num">13</span>
+            <span class="item-text">Reductor del ventilador de aislamiento instalado</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_1_6&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_6&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_6&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_1_6">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_1_6&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_1_6&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_1_6&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_1_6"></div>
+        </div>
+        <div class="item-card" id="card-1_1_7">
+          <div class="item-top">
+            <span class="item-num">14</span>
+            <span class="item-text">Ventilador de aislamiento instalado</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_1_7&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_7&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_1_7&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_1_7">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_1_7&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_1_7&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_1_7&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_1_7"></div>
+        </div><div class="section-label">Cortinas de aire</div>
+        <div class="item-card" id="card-1_2_0">
+          <div class="item-top">
+            <span class="item-num">15</span>
+            <span class="item-text">Cortina de aire interior instalada</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_2_0&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_2_0&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_2_0&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_2_0">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_2_0&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_2_0&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_2_0&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_2_0"></div>
+        </div>
+        <div class="item-card" id="card-1_2_1">
+          <div class="item-top">
+            <span class="item-num">16</span>
+            <span class="item-text">Cortina de aire exterior instalada</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_2_1&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_2_1&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_2_1&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_2_1">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_2_1&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_2_1&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_2_1&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_2_1"></div>
+        </div>
+        <div class="item-card" id="card-1_2_2">
+          <div class="item-top">
+            <span class="item-num">17</span>
+            <span class="item-text">Fijaciones y soportes de cortinas de aire completos</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;1_2_2&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_2_2&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;1_2_2&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-1_2_2">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;1_2_2&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;1_2_2&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;1_2_2&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-1_2_2"></div>
+        </div></div>
+<div id="pane-2" class="pane"><div class="section-label">Conveyor dentro del horno</div>
+        <div class="item-card" id="card-2_0_0">
+          <div class="item-top">
+            <span class="item-num">1</span>
+            <span class="item-text">Track interior de horno (furnace inner track) instalado</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_0_0&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_0_0&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_0_0&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_0_0">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_0_0&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_0_0&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_0_0&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_0_0"></div>
+        </div>
+        <div class="item-card" id="card-2_0_1">
+          <div class="item-top">
+            <span class="item-num">2</span>
+            <span class="item-text">Track de expansión dentro del horno instalado</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_0_1&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_0_1&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_0_1&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_0_1">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_0_1&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_0_1&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_0_1&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_0_1"></div>
+        </div>
+        <div class="item-card" id="card-2_0_2">
+          <div class="item-top">
+            <span class="item-num">3</span>
+            <span class="item-text">Cadena XT160 instalada dentro del horno</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_0_2&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_0_2&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_0_2&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_0_2">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_0_2&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_0_2&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_0_2&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_0_2"></div>
+        </div>
+        <div class="item-card" id="card-2_0_3">
+          <div class="item-top">
+            <span class="item-num">4</span>
+            <span class="item-text">Juntas internas de track lisas — sin escalones ni deformaciones</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_0_3&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_0_3&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_0_3&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_0_3">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_0_3&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_0_3&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_0_3&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_0_3"></div>
+        </div>
+        <div class="item-card" id="card-2_0_4">
+          <div class="item-top">
+            <span class="item-num">5</span>
+            <span class="item-text">Prueba manual de cadena — sin atascos en todo el recorrido</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_0_4&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_0_4&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_0_4&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_0_4">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_0_4&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_0_4&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_0_4&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_0_4"></div>
+        </div>
+        <div class="item-card" id="card-2_0_5">
+          <div class="item-top">
+            <span class="item-num">6</span>
+            <span class="item-text">Load slides verificados dentro del horno</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_0_5&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_0_5&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_0_5&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_0_5">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_0_5&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_0_5&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_0_5&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_0_5"></div>
+        </div><div class="section-label">Integridad estructural general</div>
+        <div class="item-card" id="card-2_1_0">
+          <div class="item-top">
+            <span class="item-num">7</span>
+            <span class="item-text">Todos los pernos de fijación de paneles apretados</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_1_0&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_1_0&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_1_0&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_1_0">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_1_0&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_1_0&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_1_0&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_1_0"></div>
+        </div>
+        <div class="item-card" id="card-2_1_1">
+          <div class="item-top">
+            <span class="item-num">8</span>
+            <span class="item-text">Sin huecos o filtraciones visibles en paredes y techo</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_1_1&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_1_1&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_1_1&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_1_1">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_1_1&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_1_1&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_1_1&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_1_1"></div>
+        </div>
+        <div class="item-card" id="card-2_1_2">
+          <div class="item-top">
+            <span class="item-num">9</span>
+            <span class="item-text">Puertas / entradas del horno alineadas y selladas</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_1_2&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_1_2&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_1_2&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_1_2">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_1_2&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_1_2&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_1_2&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_1_2"></div>
+        </div>
+        <div class="item-card" id="card-2_1_3">
+          <div class="item-top">
+            <span class="item-num">10</span>
+            <span class="item-text">Soportes de columnas dentro del horno completos</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_1_3&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_1_3&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_1_3&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_1_3">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_1_3&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_1_3&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_1_3&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_1_3"></div>
+        </div>
+        <div class="item-card" id="card-2_1_4">
+          <div class="item-top">
+            <span class="item-num">11</span>
+            <span class="item-text">Deflectores y guías internas sin daño</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_1_4&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_1_4&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_1_4&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_1_4">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_1_4&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_1_4&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_1_4&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_1_4"></div>
+        </div><div class="section-label">Identificación y seguridad</div>
+        <div class="item-card" id="card-2_2_0">
+          <div class="item-top">
+            <span class="item-num">12</span>
+            <span class="item-text">Placa de identificación visible (modelo de quemador correcto)</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_2_0&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_2_0&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_2_0&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_2_0">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_2_0&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_2_0&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_2_0&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_2_0"></div>
+        </div>
+        <div class="item-card" id="card-2_2_1">
+          <div class="item-top">
+            <span class="item-num">13</span>
+            <span class="item-text">Señalización de temperatura máxima en exterior</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_2_1&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_2_1&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_2_1&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_2_1">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_2_1&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_2_1&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_2_1&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_2_1"></div>
+        </div>
+        <div class="item-card" id="card-2_2_2">
+          <div class="item-top">
+            <span class="item-num">14</span>
+            <span class="item-text">Puerta de inspección / acceso de servicio operativa</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_2_2&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_2_2&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_2_2&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_2_2">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_2_2&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_2_2&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_2_2&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_2_2"></div>
+        </div>
+        <div class="item-card" id="card-2_2_3">
+          <div class="item-top">
+            <span class="item-num">15</span>
+            <span class="item-text">Área perimetral limpia y libre de materiales</span>
+          </div>
+          <div class="status-row">
+            <button class="sbtn" onclick="setStatus(&#39;2_2_3&#39;,&#39;ok&#39;,this)">✓ OK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_2_3&#39;,&#39;nok&#39;,this)">✗ NOK</button>
+            <button class="sbtn" onclick="setStatus(&#39;2_2_3&#39;,&#39;na&#39;,this)">N/A</button>
+          </div>
+          <div class="note-area" id="note-area-2_2_3">
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes[&#39;2_2_3&#39;]=this.value"></textarea>
+          </div>
+          <div class="action-row">
+            <button class="act-btn" onclick="toggleNote(&#39;2_2_3&#39;)">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera(&#39;2_2_3&#39;)">📷 Foto</button>
+          </div>
+          <div class="photo-count" id="photo-count-2_2_3"></div>
+        </div></div>
 
 <div class="bottom-bar">
   <div class="summary-pills">
     <span class="pill pill-ok">✓ OK: <span id="cnt-ok">0</span></span>
     <span class="pill pill-nok">✗ NOK: <span id="cnt-nok">0</span></span>
-    <span class="pill pill-pend">⏳ Pend: <span id="cnt-pend">0</span></span>
+    <span class="pill pill-pend">⏳ Pend: <span id="cnt-pend">56</span></span>
   </div>
   <div class="action-btns">
-    <button class="main-btn btn-share" onclick="showModal()">📤 Ver resumen</button>
-    <button class="main-btn btn-notes" onclick="abrirNotas()">📋 Enviar a Notas</button>
+    <button class="main-btn btn-send" onclick="showModal()">📧 Enviar reporte</button>
+    <button class="main-btn btn-preview" onclick="copiarResumen()">📋 Copiar</button>
   </div>
 </div>
 
+<!-- Preview Modal -->
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal">
-    <h3>Resumen de revisión</h3>
+    <h3>📧 Enviar reporte por correo</h3>
+    <p class="modal-sub">Se enviará a martin.camarena2906@icloud.com</p>
     <pre id="modal-content"></pre>
     <div class="modal-btns">
-      <button class="modal-btn modal-btn-copy" onclick="copiarResumen()">📋 Copiar</button>
-      <button class="modal-btn modal-btn-close" onclick="closeModal()">Cerrar</button>
+      <button class="modal-btn modal-btn-send" onclick="enviarCorreo()">✉️ Enviar ahora</button>
+      <button class="modal-btn modal-btn-close" onclick="closeModal()">Cancelar</button>
     </div>
-    <div class="copy-confirm" id="copy-confirm">✅ Copiado — pega en WhatsApp o Notas</div>
+  </div>
+</div>
+
+<!-- Sending overlay -->
+<div class="sending-overlay" id="sending-overlay">
+  <div class="sending-box">
+    <div class="icon" id="sending-icon">⏳</div>
+    <p id="sending-text">Enviando reporte...</p>
+    <div class="sub" id="sending-sub">Por favor espera</div>
   </div>
 </div>
 
 <input type="file" id="cam-input" accept="image/*" capture="environment">
 
+<script src="./Checklist Hornos — Proyecto 025_files/email.min.js.descarga"></script>
 <script>
+emailjs.init('mmwQK-39_pS00D4qV');
+
 const ITEMS = {
   0: [
     { sec: 'Estructura y paneles', items: [
@@ -296,17 +1368,11 @@ function buildAll() {
             <button class="sbtn" onclick="setStatus('${key}','na',this)">N/A</button>
           </div>
           <div class="note-area" id="note-area-${key}">
-            <textarea rows="2" placeholder="Observación o número de foto..." onchange="notes['${key}']=this.value" oninput="notes['${key}']=this.value"></textarea>
+            <textarea rows="2" placeholder="Observación o número de foto..." oninput="notes['${key}']=this.value"></textarea>
           </div>
           <div class="action-row">
-            <button class="act-btn" onclick="toggleNote('${key}')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
-              Nota
-            </button>
-            <button class="act-btn" onclick="openCamera('${key}')">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-              Foto
-            </button>
+            <button class="act-btn" onclick="toggleNote('${key}')">✏️ Nota</button>
+            <button class="act-btn" onclick="openCamera('${key}')">📷 Foto</button>
           </div>
           <div class="photo-count" id="photo-count-${key}"></div>
         </div>`;
@@ -324,9 +1390,7 @@ function setStatus(key, val, btn) {
   const row = btn.closest('.status-row');
   row.querySelectorAll('.sbtn').forEach(b => b.classList.remove('selected-ok','selected-nok','selected-na'));
   btn.classList.add('selected-' + val);
-  if (val === 'nok') {
-    document.getElementById('note-area-' + key).classList.add('show');
-  }
+  if (val === 'nok') document.getElementById('note-area-' + key).classList.add('show');
   updateProgress();
 }
 
@@ -343,8 +1407,7 @@ function openCamera(key) {
 }
 document.getElementById('cam-input').addEventListener('change', function() {
   if (!currentPhotoKey || !this.files.length) return;
-  if (!photos[currentPhotoKey]) photos[currentPhotoKey] = 0;
-  photos[currentPhotoKey]++;
+  photos[currentPhotoKey] = (photos[currentPhotoKey] || 0) + 1;
   const el = document.getElementById('photo-count-' + currentPhotoKey);
   el.style.display = 'block';
   el.textContent = '📷 ' + photos[currentPhotoKey] + ' foto(s) tomada(s)';
@@ -362,7 +1425,7 @@ function updateProgress() {
       sec.items.forEach((_, ii) => {
         total++;
         const k = `${pi}_${si}_${ii}`;
-        if (states[k]) { done++; if (states[k]==='ok') ok++; if (states[k]==='nok') nok++; }
+        if (states[k]) { done++; if(states[k]==='ok'||states[k]==='na') ok++; if(states[k]==='nok') nok++; }
       });
     });
   });
@@ -375,21 +1438,9 @@ function updateProgress() {
 }
 
 function buildResumen() {
-  const tec = document.getElementById('tecnico').value || '—';
-  const fecha = document.getElementById('fecha').value || '—';
-  const folio = document.getElementById('folio').value || 'SIN FOLIO';
-  const horno = document.getElementById('horno-meta').value;
   const tabNames = ['HORNO DE SECADO','HORNO DE CURADO','ELEMENTOS COMUNES'];
   let ok=0, nok=0, pend=0;
-  let lines = [
-    `CHECKLIST REVISIÓN HORNOS`,
-    `Folio: ${folio}`,
-    `Técnico: ${tec}`,
-    `Fecha: ${fecha}`,
-    `Horno: ${horno}`,
-    `Proyecto 025 | ICOMX × FORGENT`,
-    ``,
-  ];
+  let lines = [];
   [0,1,2].forEach(pi => {
     lines.push(`━━ ${tabNames[pi]} ━━`);
     ITEMS[pi].forEach((sec, si) => {
@@ -409,54 +1460,83 @@ function buildResumen() {
     });
     lines.push('');
   });
-  lines.push(`RESUMEN: ✓ OK/NA: ${ok} | ✗ NOK: ${nok} | Pendiente: ${pend}`);
-  return lines.join('\n');
+  return { texto: lines.join('\n'), ok, nok, pend };
 }
 
 function showModal() {
-  document.getElementById('modal-content').textContent = buildResumen();
+  const { texto } = buildResumen();
+  document.getElementById('modal-content').textContent = texto;
   document.getElementById('modal').classList.add('show');
-  document.getElementById('copy-confirm').style.display = 'none';
 }
 function closeModal() {
   document.getElementById('modal').classList.remove('show');
 }
 
 function copiarResumen() {
-  const txt = document.getElementById('modal-content').textContent;
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(txt).then(() => {
-      const el = document.getElementById('copy-confirm');
-      el.style.display = 'block';
-      setTimeout(() => el.style.display = 'none', 3000);
-    });
-  } else {
-    const ta = document.createElement('textarea');
-    ta.value = txt; ta.style.position='fixed'; ta.style.opacity='0';
-    document.body.appendChild(ta); ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    const el = document.getElementById('copy-confirm');
-    el.style.display = 'block';
-    setTimeout(() => el.style.display = 'none', 3000);
+  const { texto } = buildResumen();
+  const tec = document.getElementById('tecnico').value || '—';
+  const fecha = document.getElementById('fecha').value || '—';
+  const folio = document.getElementById('folio').value || 'SIN FOLIO';
+  const full = `CHECKLIST HORNOS 025\nFolio: ${folio} | Técnico: ${tec} | Fecha: ${fecha}\n\n${texto}`;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(full).then(() => alert('✅ Copiado — pega en WhatsApp o Notas'));
   }
 }
 
-function abrirNotas() {
-  const txt = buildResumen();
-  const encoded = encodeURIComponent(txt);
-  window.location.href = `notes://x-callback-url/create?title=Checklist%20Hornos%20025&body=${encoded}`;
-  setTimeout(() => {
-    if (confirm('¿No se abrió Notas? ¿Copiar el resumen al portapapeles?')) {
-      copiarResumen();
-    }
-  }, 1200);
+function enviarCorreo() {
+  const tec = document.getElementById('tecnico').value;
+  const fecha = document.getElementById('fecha').value;
+  const folio = document.getElementById('folio').value;
+  const horno = document.getElementById('horno-meta').value;
+
+  if (!tec || !folio) {
+    alert('Por favor llena el nombre del técnico y el folio antes de enviar.');
+    return;
+  }
+
+  closeModal();
+  const overlay = document.getElementById('sending-overlay');
+  overlay.classList.add('show');
+  document.getElementById('sending-icon').textContent = '⏳';
+  document.getElementById('sending-text').textContent = 'Enviando reporte...';
+  document.getElementById('sending-sub').textContent = 'Por favor espera';
+
+  const { texto, ok, nok, pend } = buildResumen();
+
+  const params = {
+    name: tec,
+    tecnico: tec,
+    fecha: fecha,
+    folio: folio,
+    horno: horno,
+    cnt_ok: ok,
+    cnt_nok: nok,
+    cnt_pend: pend,
+    reporte: texto,
+    email: 'martin.camarena2906@icloud.com',
+    title: `Checklist Hornos 025 - ${folio}`,
+    message: texto,
+  };
+
+  emailjs.send('service_x87wscx', 'template_vginaed', params)
+    .then(() => {
+      document.getElementById('sending-icon').textContent = '✅';
+      document.getElementById('sending-text').textContent = '¡Reporte enviado!';
+      document.getElementById('sending-sub').textContent = 'Llega a martin.camarena2906@icloud.com';
+      setTimeout(() => overlay.classList.remove('show'), 3000);
+    })
+    .catch((err) => {
+      document.getElementById('sending-icon').textContent = '❌';
+      document.getElementById('sending-text').textContent = 'Error al enviar';
+      document.getElementById('sending-sub').textContent = 'Usa "Copiar" y manda por WhatsApp';
+      setTimeout(() => overlay.classList.remove('show'), 3000);
+    });
 }
 
-// Init
 document.getElementById('fecha').value = new Date().toISOString().split('T')[0];
 buildAll();
 updateProgress();
 </script>
-</body>
-</html>
+
+
+</body></html>
